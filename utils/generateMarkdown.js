@@ -92,7 +92,7 @@ function generateMarkdown(data) {
   ${data.contrib}
 
   ## Tests
-  ${data.tests}
+  ${data.test}
 
   ## Questions
   For any questions, please contact me via:
