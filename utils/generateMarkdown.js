@@ -28,9 +28,9 @@ function renderLicenseLink(license) {
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {
+function renderLicenseSection(license, github) {
   if(license==='Apache'){
-    return `Copyright [yyyy] [name of copyright owner]
+    return `Copyright 2021 ${github}
     
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -45,7 +45,7 @@ function renderLicenseSection(license) {
     limitations under the License.`;
   }
   else if(license==='MIT'){
-    return `Copyright <YEAR> <COPYRIGHT HOLDER>
+    return `Copyright 2021 ${github}
     
     Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
     
@@ -61,7 +61,43 @@ function renderLicenseSection(license) {
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
+  ${renderLicenseBadge(data.license)}
 
+  ## Table of Contents
+  1. [Description] (#Description)
+  2. [Install] (#Install)
+  3. [Usage] (#Usage)
+  4. [License] (#License)
+  5. [Contributions] (#Contributions)
+  6. [Tests] (#Tests)
+  7. [Questions] (#Questions)
+
+  ## Description
+  ${data.desc}
+
+  ## Install
+  ${data.install}
+
+  ## Usage
+  ${data.usage}
+
+  ## License
+  This application is licensed under the ${data.license} license.
+
+  ${renderLicenseSection(data.license)}
+
+  For more information, please visit ${renderLicenseLink(data.license)}
+
+  ## Contributions
+  ${data.contrib}
+
+  ## Tests
+  ${data.tests}
+
+  ## Questions
+  For any questions, please contact me via:
+  Github - https://github.com/${data.github}
+  Email - ${data.email}
 `;
 }
 
