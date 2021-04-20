@@ -64,13 +64,13 @@ function generateMarkdown(data) {
   ${renderLicenseBadge(data.license)}
 
   ## Table of Contents
-  1. [Description] (#Description)
-  2. [Install] (#Install)
-  3. [Usage] (#Usage)
-  4. [License] (#License)
-  5. [Contributions] (#Contributions)
-  6. [Tests] (#Tests)
-  7. [Questions] (#Questions)
+  1. [Description](#Description)
+  2. [Install](#Install)
+  3. [Usage](#Usage)
+  4. [License](#License)
+  5. [Contributions](#Contributions)
+  6. [Tests](#Tests)
+  7. [Questions](#Questions)
 
   ## Description
   ${data.desc}
@@ -84,7 +84,7 @@ function generateMarkdown(data) {
   ## License
   This application is licensed under the ${data.license} license.
 
-  ${renderLicenseSection(data.license)}
+  ${renderLicenseSection(data.license, data.github)}
 
   For more information, please visit ${renderLicenseLink(data.license)}
 
